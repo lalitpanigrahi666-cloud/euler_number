@@ -8,14 +8,17 @@ def factorial(i):
             i = i + 1
     return f
         
-def euler_number(place):
-    n = 0
-    e = 0
-    for n in range(0,place):
-        e += 1/(factorial(n))
-        n += 1
-    return e
-place = int(input('enter no of terms to be considered:'))
-e = euler_number(place)
+def euler_number(terms):
+    if terms >= 0:
+        e = 0
+        for n in range(0,terms):
+            e += 1/(factorial(n))
+            n += 1
+        return e
+    elif terms < 0:
+        print('invalid input!!!(terms>0)')
+    
+terms = int(input('enter no of terms to be considered:'))
+e = euler_number(terms)
 print(f"{e}")
     
